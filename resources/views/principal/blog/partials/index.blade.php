@@ -38,7 +38,7 @@
                             <div class="blog-post__row">
                                 <div class="blog-post__content">
                                     <h2><a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h2>
-                                    <figure class="blog-post__thumb text-center"><a href="{{ route('blog.show', $post->slug) }}"><img class="img-responsive" src="{{ asset($post->path ?? $post->thumb_path) }}" style="height: 343px;"  alt="{{ $post->title }}"></a></figure>
+                                    <figure class="blog-post__thumb text-center"><a href="{{ route('blog.show', $post->slug) }}"><img class="img-responsive" src="{{ asset($post->path ?? $post->thumb_path) }}"  id="blog-img" alt="{{ $post->title }}"></a></figure>
                                     <p>{!! \Illuminate\Support\Str::limit(strip_tags($post->content), 177) !!}</p>
                                 </div>
                                 <div class="blog-post__top">

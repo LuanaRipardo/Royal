@@ -19,14 +19,14 @@
     </div>
     <main class="page-content slideout-panel" id="content">
         <div class="services-panels st-row">
-            @foreach($services as $service)
+            @foreach ($items->where('category_id', array_search('TREATMENT', \App\Models\Blog\Post::TYPE))->get() as $service)
                 <div class="services-slides">
                     <section class="services-slide st-row intro-bg" style="background-image: url({{ asset($service->thumb_path) }});">
                         <div class="services-slide__inner">
-                            <h4 class="services-slide__title">{{ $service->title }}</h4><a class="services-slide__helper" href="#">
+                            <h4 class="services-slide__title">{{ $post->title }}</h4><a class="services-slide__helper" href="#">
                                 <div class="services-slide__helper-desc container">
-                                    <h3>{{ $service->title }}</h3>
-                                    <p>{!! strip_tags($service->content) !!}</p>
+                                    <h3>{{ $post->title }}</h3>
+                                    <p>{!! strip_tags($post->content) !!}</p>
                                 </div></a>
                         </div>
                     </section>
@@ -35,7 +35,7 @@
 
                 <div class="col-md-12">
 
-                    {{ $services->links() }}
+                    {{ $posts->links() }}
 
                 </div>
         </div>

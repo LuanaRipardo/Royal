@@ -20,7 +20,12 @@ class BlogController extends Controller
     {
         $posts = Post::paginate(20);
         $post = Post::where('slug', '=', $slug)->firstOrFail();
-        $categories = Category::inRandomOrder()->limit(15)->get();
-        return view('principal.blog.partials.show', compact('post', 'posts', 'categories'));
+
+
+
+
+        return view('principal.blog.partials.show', compact('post', 'posts', 'type'));
+
+
     }
 }

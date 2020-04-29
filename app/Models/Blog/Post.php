@@ -21,7 +21,7 @@ class Post extends Model
 {
     use QueryGlobalScopeTrait;
     use Sluggable;
-    const TYPE = [1 => 'BLOG', 'SERVICE'];
+    const TYPE = [1 =>'BLOG', 'SERVICE'];
 
     protected $fillable = ['title', 'slug', 'content', 'category_id', 'user_id', 'path', 'thumb_path'];
 
@@ -41,12 +41,10 @@ class Post extends Model
     {
         return $this->getAttribute('created_at')->format('d/m/Y, H:i \h\r\s ');
     }
-
     public function getCreatedAtFormattedDiffAttribute() // created_at_formatted_diff
     {
         return $this->getAttribute('created_at')->format('M, Y');
     }
-
     /**
      * Return the sluggable configuration array for this model.
      *
@@ -61,14 +59,17 @@ class Post extends Model
         ];
     }
 
-    // Scopes
 
+    // Scopes
     public function scopeBlog($query)
     {
-        return $query->where('category_id', '=', 2);
+        return $query->where('category_id', '=', array_search('BLOG', self::TYPE));
     }
+
     public function scopeService($query)
     {
-        return $query->where('category_id', '=', 8);
+        return $query->where('category_id', '=', array_search('SERVICE', self::TYPE));
     }
+
+
 }

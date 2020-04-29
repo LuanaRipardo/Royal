@@ -31,19 +31,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tipo da categoria</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <select name="type_category" class="form-control">
-                                            @foreach(\App\Models\Blog\Category::TYPE_CATEGORY as $category)
-                                                <option value="{{ array_search($category, \App\Models\Blog\Category::TYPE_CATEGORY) }}">{{ $category }}</option>
-                                            @endforeach
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            {{ $errors->first('name') }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                     <div class="col-sm-12 col-md-7">
                                         <button class="btn btn-primary"><span>Adicionar</span></button>
@@ -60,3 +47,6 @@
         </div>
     </section>
 @endsection
+@push('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha256-Kg2zTcFO9LXOc7IwcBx1YeUBJmekycsnTsq2RuFHSZU=" crossorigin="anonymous"></script>
+@endpush

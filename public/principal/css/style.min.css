@@ -1786,7 +1786,7 @@ img {
 .img-responsive {
     display: block;
     max-width: 100%;
-    height: auto
+
 }
 
 .img-rounded {
@@ -20704,8 +20704,11 @@ input[type=checkbox], input[type=radio], label {
 }
 
 @media (min-width: 600px) {
-     #owl-blog {
+    #owl-blog {
         display: none;
+    }
+    #blog-img{
+        height: 343px;
     }
 }
 
@@ -20714,12 +20717,26 @@ input[type=checkbox], input[type=radio], label {
     #blog-mobile {
         display: none;
     }
+    #notice{
+        display:none;
+    }
+    #tags{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #blog-img{
+        height: 222px;
+    }
+
 }
+
 
 
 @media (max-width: 767px){
     .navbar-brand .logo {
-    height: 36px;
-    width: 148px;
-}
+        height: 36px;
+        width: 148px;
+    }
 }

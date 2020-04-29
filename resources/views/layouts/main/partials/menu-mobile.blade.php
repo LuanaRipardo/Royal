@@ -12,7 +12,7 @@
 
                 </li>
 
-                <li class="panel-list__item"><a href="{{ route('blog') }"><span>Blog</span></a>
+                <li class="panel-list__item"><a href="{{ route('blog') }}"><span>Blog</span></a>
 
                 </li>
                 

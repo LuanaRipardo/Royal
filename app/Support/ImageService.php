@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
-
 class ImageService
 {
     protected $image;
@@ -29,8 +28,7 @@ class ImageService
         Storage::drive('uploads')->makeDirectory($pathFolder);
 
         $pathThumb = $pathFolder . "{$filenameThumb}";
-     Image::make($this->image)->resize($this->width, $this->height)->save('/home/agenciav/public_html/novo/'. $pathThumb);
+        Image::make($this->image)->resize($this->width, $this->height)->save(public_path($pathThumb));
         return $pathThumb;
     }
 }
-
